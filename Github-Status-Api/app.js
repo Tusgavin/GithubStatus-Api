@@ -7,8 +7,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/', (req, res) => {
-  res.send('Ok');
-});
+require('./controller/scrapController')(app);
 
 app.listen(PORT);
